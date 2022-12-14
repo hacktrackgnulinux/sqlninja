@@ -1,0 +1,4 @@
+sqlninja usr/bin/
+apps usr/share/sqlninja/
+scripts usr/share/sqlninja/
+sources usr/share/sqlninja/

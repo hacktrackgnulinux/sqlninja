@@ -1,0 +1,21 @@
+Source: sqlninja
+Section: utils
+Priority: optional
+Maintainer: HackTrack Team <team@hacktracklinux.org>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.1
+Homepage: https://sqlninja.sourceforge.net/
+Vcs-Git: https://gitlab.com/kalilinux/packages/sqlninja.git
+Vcs-Browser: https://gitlab.com/kalilinux/packages/sqlninja
+
+Package: sqlninja
+Architecture: all
+Depends: ${misc:Depends}, perl, libnetpacket-perl, libnet-pcap-perl, libnet-dns-perl, libnet-rawip-perl, libio-socket-ip-perl
+Description: SQL server injection and takeover tool
+ Fancy going from a SQL Injection on Microsoft SQL Server to
+ a full GUI access on the DB? Take a few new SQL Injection
+ tricks, add a couple of remote shots in the registry to
+ disable Data Execution Prevention, mix with a little Perl
+ that automatically generates a debug script, put all this
+ in a shaker with a Metasploit wrapper, shake well and you
+ have just one of the attack modules of sqlninja!

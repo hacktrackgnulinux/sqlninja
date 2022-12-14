@@ -1,0 +1,43 @@
+Patched sqlninja to look under /usr/share/sqlninja/apps/ for the tools it needs.
+--- a/sqlninja
++++ b/sqlninja
+@@ -257,27 +257,27 @@ if (($mode eq "test") || ($mode eq "t"))
+ 	while ($uplfile eq "") {
+ 		print "  Specify the binary or script file to upload\n";
+ 		print "  shortcuts:\n".
+-		      "    1: apps/nc.exe\n".
+-		      "    2: apps/dnstun.exe\n".
+-		      "    3: apps/churrasco.exe\n".
+-		      "    4: apps/icmpsh.exe\n".
+-		      "    5: apps/vdmallowed.exe\n".
+-		      "    6: apps/vdmexploit.dll\n".
++		      "    1: /usr/share/sqlninja/apps/nc.exe\n".
++		      "    2: /usr/share/sqlninja/apps/dnstun.exe\n".
++		      "    3: /usr/share/sqlninja/apps/churrasco.exe\n".
++		      "    4: /usr/share/sqlninja/apps/icmpsh.exe\n".
++		      "    5: /usr/share/sqlninja/apps/vdmallowed.exe\n".
++		      "    6: /usr/share/sqlninja/apps/vdmexploit.dll\n".
+ 		      "  > ";
+ 		$uplfile = <STDIN>;
+ 		chomp $uplfile;
+ 		if ($uplfile eq "1") {
+-			$uplfile = "apps/nc.exe";
++			$uplfile = "/usr/share/sqlninja/apps/nc.exe";
+ 		} elsif ($uplfile eq "2") {
+-			$uplfile = "apps/dnstun.exe";
++			$uplfile = "/usr/share/sqlninja/apps/dnstun.exe";
+ 		} elsif ($uplfile eq "3") {
+-			$uplfile = "apps/churrasco.exe";
++			$uplfile = "/usr/share/sqlninja/apps/churrasco.exe";
+ 		} elsif ($uplfile eq "4") {
+-			$uplfile = "apps/icmpsh.exe";
++			$uplfile = "/usr/share/sqlninja/apps/icmpsh.exe";
+ 		} elsif ($uplfile eq "5") {
+-			$uplfile = "apps/vdmallowed.exe";
++			$uplfile = "/usr/share/sqlninja/apps/vdmallowed.exe";
+ 		} elsif ($uplfile eq "6") {
+-			$uplfile = "apps/vdmexploit.dll";
++			$uplfile = "/usr/share/sqlninja/apps/vdmexploit.dll";
+ 		}
+ 	}
+ 	upload($uplfile);
